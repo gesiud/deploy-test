@@ -22,12 +22,12 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npx ng build
+        run: npx ng build --base-href /deploy-test/
 
       - name: Deploy
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/deploy-test
+          path: dist/deploy-test/browser
 
   deploy:
     needs: build
